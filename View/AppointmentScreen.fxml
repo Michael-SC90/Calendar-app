@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #FFFFEF; -fx-background-radius: 17; -fx-border-radius: 15; -fx-border-color: #610909; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ScheduleSystem.View.AppointmentScreenController">
+   <children>
+      <GridPane fx:id="detailsGrid" layoutX="100.0" layoutY="155.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="-25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <columnConstraints>
+          <ColumnConstraints maxWidth="24.0" minWidth="5.0" prefWidth="24.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="126.0" prefWidth="126.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="220.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="220.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="158.0" text="Title  " textAlignment="RIGHT" textFill="#610909" GridPane.columnSpan="2">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="titleField" alignment="CENTER" prefHeight="25.0" prefWidth="89.0" promptText="Optional" style="-fx-border-color: #610909; -fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20;" GridPane.columnIndex="2" GridPane.columnSpan="2">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="178.0" text="Contact  " textAlignment="RIGHT" textFill="#610909" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="contactField" alignment="CENTER" prefHeight="25.0" prefWidth="225.0" promptText="Optional" style="-fx-background-color: #FFFFFF; -fx-border-color: #610909; -fx-background-radius: 20; -fx-border-radius: 20;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="173.0" text="Type  " textFill="#610909" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="typeMenu" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="266.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #610909; -fx-border-radius: 20; -fx-background-radius: 20;" text="Meeting" textAlignment="CENTER" textFill="#610909" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+               <items>
+                  <RadioMenuItem fx:id="meet" mnemonicParsing="false" selected="true" text="Meeting">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="typeGroup" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="consult" mnemonicParsing="false" text="Consultation" toggleGroup="$typeGroup" />
+               </items>
+            </MenuButton>
+            <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="180.0" text="Date  " textFill="#610909" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="216.0" promptText="Click here --&gt;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="179.0" text="Start  " textFill="#610909" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="56.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="53.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <MenuButton fx:id="startHour" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="00" textAlignment="CENTER" textFill="#610909" GridPane.columnIndex="1">
+                     <items>
+                        <RadioMenuItem id="00" mnemonicParsing="false" selected="true" text="00">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sHour" />
+                            </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem id="01" mnemonicParsing="false" text="01" toggleGroup="$sHour" />
+                        <RadioMenuItem id="02" mnemonicParsing="false" text="02" toggleGroup="$sHour" />
+                        <RadioMenuItem id="03" mnemonicParsing="false" text="03" toggleGroup="$sHour" />
+                        <RadioMenuItem id="04" mnemonicParsing="false" text="04" toggleGroup="$sHour" />
+                        <RadioMenuItem id="05" mnemonicParsing="false" text="05" toggleGroup="$sHour" />
+                        <RadioMenuItem id="06" mnemonicParsing="false" text="06" toggleGroup="$sHour" />
+                        <RadioMenuItem id="07" mnemonicParsing="false" text="07" toggleGroup="$sHour" />
+                        <RadioMenuItem id="08" mnemonicParsing="false" text="08" toggleGroup="$sHour" />
+                        <RadioMenuItem id="09" mnemonicParsing="false" text="09" toggleGroup="$sHour" />
+                        <RadioMenuItem id="10" mnemonicParsing="false" text="10" toggleGroup="$sHour" />
+                        <RadioMenuItem id="11" mnemonicParsing="false" text="11" toggleGroup="$sHour" />
+                        <RadioMenuItem id="12" mnemonicParsing="false" text="12" toggleGroup="$sHour" />
+                        <RadioMenuItem id="13" mnemonicParsing="false" text="13" toggleGroup="$sHour" />
+                        <RadioMenuItem id="14" mnemonicParsing="false" text="14" toggleGroup="$sHour" />
+                        <RadioMenuItem id="15" mnemonicParsing="false" text="15" toggleGroup="$sHour" />
+                        <RadioMenuItem id="16" mnemonicParsing="false" text="16" toggleGroup="$sHour" />
+                        <RadioMenuItem id="17" mnemonicParsing="false" text="17" toggleGroup="$sHour" />
+                        <RadioMenuItem id="18" mnemonicParsing="false" text="18" toggleGroup="$sHour" />
+                        <RadioMenuItem id="19" mnemonicParsing="false" text="19" toggleGroup="$sHour" />
+                        <RadioMenuItem id="20" mnemonicParsing="false" text="20" toggleGroup="$sHour" />
+                        <RadioMenuItem id="21" mnemonicParsing="false" text="21" toggleGroup="$sHour" />
+                        <RadioMenuItem id="22" mnemonicParsing="false" text="22" toggleGroup="$sHour" />
+                        <RadioMenuItem id="23" mnemonicParsing="false" text="23" toggleGroup="$sHour" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </MenuButton>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="71.0" text="Hour" textFill="#610909">
+                     <font>
+                        <Font name="Verdana Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="180.0" text="End  " textFill="#610909" GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <GridPane GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="56.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="53.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="56.0" text="Min" textFill="#610909">
+                     <font>
+                        <Font name="Verdana Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <MenuButton fx:id="startMin" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="00" textAlignment="CENTER" textFill="#610909" GridPane.columnIndex="1">
+                     <items>
+                        <RadioMenuItem fx:id="00" mnemonicParsing="false" selected="true" text="00">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sMin" />
+                            </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="15" mnemonicParsing="false" text="15" toggleGroup="$sMin" />
+                        <RadioMenuItem fx:id="30" mnemonicParsing="false" text="30" toggleGroup="$sMin" />
+                        <RadioMenuItem fx:id="45" mnemonicParsing="false" text="45" toggleGroup="$sMin" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </GridPane>
+            <GridPane alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="56.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="53.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <MenuButton fx:id="endHour" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="00" textAlignment="CENTER" textFill="#610909" GridPane.columnIndex="1">
+                     <items>
+                        <RadioMenuItem id="00" mnemonicParsing="false" selected="true" text="00">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="eHour" />
+                            </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem id="01" mnemonicParsing="false" text="01" toggleGroup="$eHour" />
+                        <RadioMenuItem id="02" mnemonicParsing="false" text="02" toggleGroup="$eHour" />
+                        <RadioMenuItem id="03" mnemonicParsing="false" text="03" toggleGroup="$eHour" />
+                        <RadioMenuItem id="04" mnemonicParsing="false" text="04" toggleGroup="$eHour" />
+                        <RadioMenuItem id="05" mnemonicParsing="false" text="05" toggleGroup="$eHour" />
+                        <RadioMenuItem id="06" mnemonicParsing="false" text="06" toggleGroup="$eHour" />
+                        <RadioMenuItem id="07" mnemonicParsing="false" text="07" toggleGroup="$eHour" />
+                        <RadioMenuItem id="08" mnemonicParsing="false" text="08" toggleGroup="$eHour" />
+                        <RadioMenuItem id="09" mnemonicParsing="false" text="09" toggleGroup="$eHour" />
+                        <RadioMenuItem id="10" mnemonicParsing="false" text="10" toggleGroup="$eHour" />
+                        <RadioMenuItem id="11" mnemonicParsing="false" text="11" toggleGroup="$eHour" />
+                        <RadioMenuItem id="12" mnemonicParsing="false" text="12" toggleGroup="$eHour" />
+                        <RadioMenuItem id="13" mnemonicParsing="false" text="13" toggleGroup="$eHour" />
+                        <RadioMenuItem id="14" mnemonicParsing="false" text="14" toggleGroup="$eHour" />
+                        <RadioMenuItem id="15" mnemonicParsing="false" text="15" toggleGroup="$eHour" />
+                        <RadioMenuItem id="16" mnemonicParsing="false" text="16" toggleGroup="$eHour" />
+                        <RadioMenuItem id="17" mnemonicParsing="false" text="17" toggleGroup="$eHour" />
+                        <RadioMenuItem id="18" mnemonicParsing="false" text="18" toggleGroup="$eHour" />
+                        <RadioMenuItem id="19" mnemonicParsing="false" text="19" toggleGroup="$eHour" />
+                        <RadioMenuItem id="20" mnemonicParsing="false" text="20" toggleGroup="$eHour" />
+                        <RadioMenuItem id="21" mnemonicParsing="false" text="21" toggleGroup="$eHour" />
+                        <RadioMenuItem id="22" mnemonicParsing="false" text="22" toggleGroup="$eHour" />
+                        <RadioMenuItem id="23" mnemonicParsing="false" text="23" toggleGroup="$eHour" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </MenuButton>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="71.0" text="Hour" textFill="#610909">
+                     <font>
+                        <Font name="Verdana Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="56.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="53.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="56.0" text="Min" textFill="#610909">
+                     <font>
+                        <Font name="Verdana Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <MenuButton fx:id="endMin" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="00" textAlignment="CENTER" textFill="#610909" GridPane.columnIndex="1">
+                     <items>
+                        <RadioMenuItem id="00" mnemonicParsing="false" selected="true" text="00">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="eMin" />
+                            </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem id="15" mnemonicParsing="false" text="15" toggleGroup="$eMin" />
+                        <RadioMenuItem id="30" mnemonicParsing="false" text="30" toggleGroup="$eMin" />
+                        <RadioMenuItem id="45" mnemonicParsing="false" text="45" toggleGroup="$eMin" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </GridPane>
+            <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="180.0" style="visibility: no;" text="Timezone " textFill="#610909" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Label>
+            <MenuButton alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" style="visibility: no;" text="zone" textAlignment="CENTER" textFill="#610909" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </MenuButton>
+         </children>
+         <padding>
+            <Insets bottom="70.0" right="40.0" top="70.0" />
+         </padding>
+      </GridPane>
+      <Label style="-fx-padding: 10;" text="Appointment for" textFill="#610909" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-5.0">
+         <font>
+            <Font name="Verdana Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" style="-fx-padding: 30;" AnchorPane.bottomAnchor="-10.0" AnchorPane.rightAnchor="-10.0">
+        <buttons>
+          <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-radius: 20;" text="Save" textFill="#610909">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-radius: 20;" text="Cancel" textFill="#610909">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font></Button>
+        </buttons>
+      </ButtonBar>
+      <Label fx:id="customerName" layoutX="28.0" layoutY="10.0" prefHeight="65.0" prefWidth="328.0" text="No customer selected" textFill="#ab1111" wrapText="true" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="7.0">
+         <font>
+            <Font name="Verdana Bold" size="20.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <ButtonBar buttonMinWidth="100.0" layoutX="89.0" layoutY="64.0" prefHeight="40.0" prefWidth="261.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="62.0">
+        <buttons>
+          <Button fx:id="details" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: transparent;" text="[View Details]" textAlignment="RIGHT" textFill="#610909" underline="true">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="change" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: transparent;" text="[Change Customer]" textAlignment="RIGHT" textFill="#610909" underline="true">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font>
+            </Button>
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="217.0" prefWidth="458.0" style="-fx-background-color: #FFFFEF; -fx-background-radius: 17; -fx-border-radius: 15; -fx-border-color: #610909; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ScheduleSystem.View.ReportScreenController">
+   <children>
+      <ButtonBar buttonMinWidth="150.0" maxHeight="100.0" maxWidth="600.0" minHeight="100.0" minWidth="500.0" prefHeight="100.0" prefWidth="600.0" style="-fx-padding: 20;" translateX="-10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <buttons>
+            <Button fx:id="monthlyAppts" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="150.0" style="-fx-background-color: #BFDFBF; -fx-background-radius: 20; -fx-border-color: #8187e8; -fx-border-radius: 20; -fx-border-width: 2;" text="Monthly Appointments" textFill="#610909" wrapText="true">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="allSchedules" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="150.0" style="-fx-background-color: #BFDFBF; -fx-background-radius: 20; -fx-border-color: #8187e8; -fx-border-radius: 20; -fx-border-width: 2;" text="All Schedules" textFill="#610909" wrapText="true">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="allCustomers" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="150.0" style="-fx-background-color: #BFDFBF; -fx-background-radius: 20; -fx-border-color: #8187e8; -fx-border-radius: 20; -fx-border-width: 2;" text="All Customers" textFill="#610909" wrapText="true">
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+      <Button fx:id="closeBtn" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-radius: 20;" text="Close" textFill="#610909" translateX="-10.0" translateY="-10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="Verdana Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
